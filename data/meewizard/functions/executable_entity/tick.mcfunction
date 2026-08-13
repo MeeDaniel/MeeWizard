@@ -1,2 +1,2 @@
 # Run spells logic
-function meewizard:spells/tornado/executable_entity_tick
+function meewizard:spells/executable_entity_tick

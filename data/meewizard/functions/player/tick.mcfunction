@@ -13,7 +13,7 @@ execute as @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick", tag:{meewizar
 function meewizard:player/mana/regen
 
 # Run spells logic
-function meewizard:spells/tick
+function meewizard:spells/player_tick
 
 # Reset core trackers
 scoreboard players set @s meewizard.core.click 0
