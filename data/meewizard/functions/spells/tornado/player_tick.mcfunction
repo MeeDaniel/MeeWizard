@@ -1,0 +1,1 @@
+execute if score @s meewizard.spell.tornado_resistance matches 1.. run scoreboard players remove @s meewizard.spell.tornado_resistance 1

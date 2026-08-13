@@ -1,6 +1,7 @@
 # Run spell logic
 function meewizard:spells/leap/tick
 function meewizard:spells/toss/tick
+function meewizard:spells/tornado/player_tick
 
 # Decrease cooldowns
 execute unless score @s meewizard.spell.leap_cooldown matches ..0 run scoreboard players remove @s meewizard.spell.leap_cooldown 1

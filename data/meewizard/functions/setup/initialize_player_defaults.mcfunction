@@ -16,6 +16,7 @@ execute unless score @s meewizard.spell.toss_cooldown matches -2147483648..21474
 execute unless score @s meewizard.spell.tornado_cost matches 1.. run scoreboard players set @s meewizard.spell.tornado_cost 100
 execute unless score @s meewizard.spell.tornado_delay matches 1.. run scoreboard players set @s meewizard.spell.tornado_delay 600
 execute unless score @s meewizard.spell.tornado_cooldown matches -2147483648..2147483647 run scoreboard players set @s meewizard.spell.tornado_cooldown 0
+execute unless score @s meewizard.spell.tornado_resistance matches -2147483648..2147483647 run scoreboard players set @s meewizard.spell.tornado_resistance 0
 
 execute unless score @s meewizard.spell.spew_cost matches 1.. run scoreboard players set @s meewizard.spell.spew_cost 50
 execute unless score @s meewizard.spell.spew_delay matches 1.. run scoreboard players set @s meewizard.spell.spew_delay 100

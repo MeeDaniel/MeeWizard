@@ -29,6 +29,8 @@ scoreboard objectives add meewizard.spell.tornado_unlocked dummy
 scoreboard objectives add meewizard.spell.tornado_cooldown dummy
 scoreboard objectives add meewizard.spell.tornado_cost dummy
 scoreboard objectives add meewizard.spell.tornado_delay dummy
+scoreboard objectives add meewizard.spell.tornado_executable_entity dummy
+scoreboard objectives add meewizard.spell.tornado_resistance dummy
 
 scoreboard objectives add meewizard.spell.spew_unlocked dummy
 scoreboard objectives add meewizard.spell.spew_cooldown dummy
