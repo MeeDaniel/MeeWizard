@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "crafted_spellbook": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "meewizard:spellbook"
+      }
+    }
+  },
+  "rewards": {
+    "function": "meewizard:items/give_spellbook"
+  }
+}

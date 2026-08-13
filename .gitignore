@@ -1,0 +1,6 @@
+*.swp
+*/*.swp
+
+# Hide story
+docs/CHARACTERS.md
+*.un~

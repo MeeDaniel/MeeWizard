@@ -1,0 +1,1 @@
+execute if score @s meewizard.spell.toss_cooldown matches ..0 if score @s meewizard.player.mana >= @s meewizard.spell.toss_cost if score @s meewizard.spell.toss_unlocked matches 1.. run function meewizard:spells/toss/core
