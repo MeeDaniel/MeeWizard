@@ -3,26 +3,28 @@ Generates list of commands with different spell names. Simple and
 Asymptotically appropriate
 """
 
-COMMAND = """execute if score @s meewizard.player.active_slot matches !index run title @s actionbar [{"text":"Mana: ","color":"white"},{"score":{"name":"*","objective":"meewizard.player.mana"},"color":"aqua"},{"text":"/","color":"gray"},{"score":{"name":"*","objective":"meewizard.player.max_mana"},"color":"aqua"},{"text":" | ","color":"gray"},{"text": "Spell: ","color":"white"},{"text":"!name","color":"green"},{"text":" [","color":"gray"},{"score":{"name":"*","objective":"meewizard.player.active_slot"},"color":"green"},{"text":"]","color":"gray"}]"""
+COMMAND = """execute if score @s meewizard.spell.!identifier_cooldown matches ..0 if score @s meewizard.player.active_slot matches !index run title @s actionbar [{"text":"Mana: ","color":"white"},{"score":{"name":"*","objective":"meewizard.player.mana"},"color":"aqua"},{"text":"/","color":"gray"},{"score":{"name":"*","objective":"meewizard.player.max_mana"},"color":"aqua"},{"text":" | ","color":"gray"},{"text": "Spell: ","color":"white"},{"text":"!name","color":"green"},{"text":" [","color":"gray"},{"score":{"name":"*","objective":"meewizard.player.active_slot"},"color":"green"},{"text":"]","color":"gray"}]
+execute if score @s meewizard.spell.!identifier_cooldown matches 1.. if score @s meewizard.player.active_slot matches !index run title @s actionbar [{"text":"Mana: ","color":"white"},{"score":{"name":"*","objective":"meewizard.player.mana"},"color":"aqua"},{"text":"/","color":"gray"},{"score":{"name":"*","objective":"meewizard.player.max_mana"},"color":"aqua"},{"text":" | ","color":"gray"},{"text": "Spell: ","color":"white"},{"text":"!name","color":"green"},{"text":" [","color":"gray"},{"score":{"name":"*","objective":"meewizard.player.active_slot"},"color":"green"},{"text":"]","color":"gray"},{"text":" Cooldown: "},{"score":{"name":"*","objective":"meewizard.spell.!identifier_cooldown"},"color":"green"},{"text":"t","color":"green"}]
+"""
 
-spell_names = [ # Index
-    "Empty",    # 0
-    "Leap",     # 1
-    "Toss",     # 2
-    "Tornado",  # 3
-    "Spew",     # 4
-    "Geyser",   # 5
-    "Frostbite",# 6
-    "Ice Wall", # 7
-    "Earthquake",# 8
-    "Fangs",    # 9
-    "Mark",     # 10
-    "Mini-skeleton" # 11
+spell_info = [
+    {"name": "Empty", "identifier": "empty"},                   # 0
+    {"name": "Leap", "identifier": "leap"},                     # 1
+    {"name": "Toss", "identifier": "toss"},                     # 2
+    {"name": "Tornado", "identifier": "tornado"},               # 3
+    {"name": "Spew", "identifier": "spew"},                     # 4
+    {"name": "Geyser", "identifier": "geyser"},                 # 5
+    {"name": "Frostbite", "identifier": "frostbite"},           # 6
+    {"name": "Ice Wall", "identifier": "ice_wall"},             # 7
+    {"name": "Earthquake", "identifier": "earthquake"},         # 8
+    {"name": "Fangs", "identifier": "fangs"},                   # 9
+    {"name": "Mark", "identifier": "mark"},                     # 10
+    {"name": "Mini-skeleton", "identifier": "mini-skeleton"},   # 11
 ]
 
 result = [
-    COMMAND.replace("!index", str(i)).replace("!name", spell_names[i])
-    for i in range(len(spell_names))
+    COMMAND.replace("!index", str(i)).replace("!name", spell_info[i]["name"]).replace("!identifier", spell_info[i]["identifier"])
+    for i in range(len(spell_info))
 ]
 result_string = "\n".join(result)
 
